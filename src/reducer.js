@@ -1,12 +1,11 @@
-// import { stat } from "fs";
 
 export const initialState = {
     basket: ["bread"],
     user: null
 };
-// export const getBasketTotal = (basket) => (
-//     basket?.reduce((amount, item) => item.price + amount, 0)
-// );
+export const getBasketTotal = (basket) => (
+    basket?.reduce((amount, item) => item.price + amount, 0)
+);
 
 const reducer = (state, action) => {
     console.log(action);
