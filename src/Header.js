@@ -2,8 +2,12 @@ import React from 'react'
 import "./Header.css"
 import { Link } from 'react-router-dom';
 
+import{useStateValue} from "./StateProvider";
 
 function Header() {
+
+    const [{basket,user}]= useStateValue();
+    console.log(basket);
   return (
     <nav className='header'>
     <Link to="/">
@@ -44,14 +48,11 @@ function Header() {
         <Link to='/Checkout' className='header__link'>
         <div className='header__optionbasket'>
             <p className='para'>cart</p>
-            <span className='header__optionlinetwo header__basketcount'>0</span>
+            <span className='header__optionlinetwo header__basketcount'>{basket  ?.length}</span>
         </div>
         </Link>
         
         
-
-
-
     </div>
 
 
